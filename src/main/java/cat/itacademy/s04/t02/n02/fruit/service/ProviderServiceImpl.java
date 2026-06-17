@@ -1,6 +1,7 @@
 package cat.itacademy.s04.t02.n02.fruit.service;
 
 import cat.itacademy.s04.t02.n02.fruit.exception.ProviderAlreadyExistsException;
+import cat.itacademy.s04.t02.n02.fruit.exception.ProviderNotFoundException;
 import cat.itacademy.s04.t02.n02.fruit.model.Provider;
 import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderRequestDTO;
 import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderResponseDTO;
@@ -31,5 +32,23 @@ public class ProviderServiceImpl implements ProviderService {
                 provider.getName(),
                 provider.getCountry()
         );
+    }
+
+    @Override
+    public ProviderResponseDTO updateProvider(Long id, ProviderRequestDTO providerRequestDTO) {
+        Provider provider = providerRepository.findById(id)
+                .orElseThrow(() -> new ProviderNotFoundException());
+        provider.setName(providerRequestDTO.getName());
+        provider.setCountry(providerRequestDTO.getCountry());
+        providerRepository.save(provider);
+
+        return new ProviderResponseDTO(
+                provider.getId(),
+                provider.getName(),
+                provider.getCountry()
+
+        );
+
+
     }
 }

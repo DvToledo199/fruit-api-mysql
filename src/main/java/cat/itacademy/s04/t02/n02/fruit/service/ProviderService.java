@@ -7,5 +7,9 @@ public interface ProviderService {
 
     ProviderResponseDTO createProvider(ProviderRequestDTO providerRequestDTO);
 
+    ProviderResponseDTO updateProvider(Long id, ProviderRequestDTO providerRequestDTO);
+
+
+
 
 }

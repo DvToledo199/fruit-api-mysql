@@ -16,8 +16,11 @@ public class ProviderController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-
     public ProviderResponseDTO createProvider(@RequestBody ProviderRequestDTO providerRequestDTO) {
         return providerService.createProvider(providerRequestDTO);
+    }
+    @PutMapping("/{id}")
+    public ProviderResponseDTO updateProvider(@PathVariable Long id, @RequestBody ProviderRequestDTO providerRequestDTO) {
+        return providerService.updateProvider(id, providerRequestDTO);
     }
 }
