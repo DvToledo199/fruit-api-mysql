@@ -1,4 +1,4 @@
-package cat.itacademy.s04.t02.n02.fruit.model.dto;
+package cat.itacademy.s04.t02.n02.fruit.model.dto.provider;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

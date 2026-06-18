@@ -1,11 +1,11 @@
-package cat.itacademy.s04.t02.n02.fruit.service;
+package cat.itacademy.s04.t02.n02.fruit.service.provider;
 
 import cat.itacademy.s04.t02.n02.fruit.exception.ProviderAlreadyExistsException;
 import cat.itacademy.s04.t02.n02.fruit.exception.ProviderNotFoundException;
-import cat.itacademy.s04.t02.n02.fruit.model.Provider;
-import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderRequestDTO;
-import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderResponseDTO;
-import cat.itacademy.s04.t02.n02.fruit.repository.ProviderRepository;
+import cat.itacademy.s04.t02.n02.fruit.model.entity.Provider;
+import cat.itacademy.s04.t02.n02.fruit.model.dto.provider.ProviderRequestDTO;
+import cat.itacademy.s04.t02.n02.fruit.model.dto.provider.ProviderResponseDTO;
+import cat.itacademy.s04.t02.n02.fruit.repository.provider.ProviderRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,6 +1,6 @@
-package cat.itacademy.s04.t02.n02.fruit.repository;
+package cat.itacademy.s04.t02.n02.fruit.repository.provider;
 
-import cat.itacademy.s04.t02.n02.fruit.model.Provider;
+import cat.itacademy.s04.t02.n02.fruit.model.entity.Provider;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProviderRepository extends JpaRepository<Provider, Long> {

@@ -1,8 +1,8 @@
-package cat.itacademy.s04.t02.n02.fruit.controller;
+package cat.itacademy.s04.t02.n02.fruit.controller.provider;
 
-import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderRequestDTO;
-import cat.itacademy.s04.t02.n02.fruit.model.dto.ProviderResponseDTO;
-import cat.itacademy.s04.t02.n02.fruit.service.ProviderService;
+import cat.itacademy.s04.t02.n02.fruit.model.dto.provider.ProviderRequestDTO;
+import cat.itacademy.s04.t02.n02.fruit.model.dto.provider.ProviderResponseDTO;
+import cat.itacademy.s04.t02.n02.fruit.service.provider.ProviderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
