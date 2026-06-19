@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/fruits")
 @RequiredArgsConstructor
@@ -18,5 +20,10 @@ public class FruitController {
     @PostMapping
     public FruitResponseDTO saveFruit(@RequestBody FruitRequestDTO fruitRequestDTO) {
         return fruitService.createFruit(fruitRequestDTO);
+    }
+
+    @GetMapping("/provider/{providerId}")
+    public List<FruitResponseDTO> findFruitsByProviderId(@PathVariable Long providerId) {
+        return fruitService.findFruitsByProviderId(providerId);
     }
 }

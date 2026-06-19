@@ -10,6 +10,9 @@ import cat.itacademy.s04.t02.n02.fruit.repository.provider.ProviderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class FruitServiceImpl implements FruitService {
@@ -33,5 +36,21 @@ public class FruitServiceImpl implements FruitService {
                 fruit.getWeightInKilos(),
                 fruit.getProvider().getId()
         );
+    }
+
+    @Override
+    public List<FruitResponseDTO> findFruitsByProviderId(Long providerId) {
+        List<Fruit> fruits = fruitRepository.findByProviderId(providerId);
+        List<FruitResponseDTO> fruitResponseDTOList = new ArrayList<>();
+        for (Fruit fruit : fruits) {
+             FruitResponseDTO fruitResponseDTO = new FruitResponseDTO(
+                    fruit.getId(),
+                    fruit.getName(),
+                    fruit.getWeightInKilos(),
+                    fruit.getProvider().getId()
+            );
+            fruitResponseDTOList.add(fruitResponseDTO);
+        }
+        return fruitResponseDTOList;
     }
 }
