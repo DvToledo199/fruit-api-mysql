@@ -13,5 +13,6 @@ import lombok.Setter;
 public class ProviderRequestDTO {
     @NotBlank
     private String name;
+    @NotBlank
     private String country;
 }

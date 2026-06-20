@@ -9,6 +9,10 @@ public interface ProviderService {
 
     ProviderResponseDTO updateProvider(Long id, ProviderRequestDTO providerRequestDTO);
 
+    void deleteProvider(Long id);
+
+
+
 
 
 
