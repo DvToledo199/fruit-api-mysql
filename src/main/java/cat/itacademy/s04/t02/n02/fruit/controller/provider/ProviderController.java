@@ -21,7 +21,7 @@ public class ProviderController {
         return providerService.createProvider(providerRequestDTO);
     }
     @PutMapping("/{id}")
-    public ProviderResponseDTO updateProvider(@PathVariable Long id, @RequestBody ProviderRequestDTO providerRequestDTO) {
+    public ProviderResponseDTO updateProvider(@PathVariable Long id, @Valid @RequestBody ProviderRequestDTO providerRequestDTO) {
         return providerService.updateProvider(id, providerRequestDTO);
     }
     @ResponseStatus(HttpStatus.NO_CONTENT)

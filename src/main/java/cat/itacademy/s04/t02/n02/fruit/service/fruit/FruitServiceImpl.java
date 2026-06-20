@@ -40,6 +40,8 @@ public class FruitServiceImpl implements FruitService {
 
     @Override
     public List<FruitResponseDTO> findFruitsByProviderId(Long providerId) {
+        providerRepository.findById(providerId)
+                .orElseThrow(() -> new ProviderNotFoundException());
         List<Fruit> fruits = fruitRepository.findByProviderId(providerId);
         List<FruitResponseDTO> fruitResponseDTOList = new ArrayList<>();
         for (Fruit fruit : fruits) {

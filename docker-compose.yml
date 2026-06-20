@@ -15,5 +15,20 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  app:
+    build: .
+    container_name: fruit-api
+
+    depends_on:
+      - mysql
+
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/fruitdb
+      DB_USER: fruituser
+      DB_PASSWORD: fruitpass
+
+    ports:
+      - "8080:8080"
+
 volumes:
   mysql_data:

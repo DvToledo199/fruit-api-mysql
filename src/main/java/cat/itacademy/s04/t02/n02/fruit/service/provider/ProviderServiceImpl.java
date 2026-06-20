@@ -40,6 +40,10 @@ public class ProviderServiceImpl implements ProviderService {
     public ProviderResponseDTO updateProvider(Long id, ProviderRequestDTO providerRequestDTO) {
         Provider provider = providerRepository.findById(id)
                 .orElseThrow(() -> new ProviderNotFoundException());
+        boolean exists = providerRepository.existsByName(providerRequestDTO.getName());
+        if (exists && !provider.getName().equals(providerRequestDTO.getName())) {
+            throw new ProviderAlreadyExistsException();
+        }
         provider.setName(providerRequestDTO.getName());
         provider.setCountry(providerRequestDTO.getCountry());
         providerRepository.save(provider);

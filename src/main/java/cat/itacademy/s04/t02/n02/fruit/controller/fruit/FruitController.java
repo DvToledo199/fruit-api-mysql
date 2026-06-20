@@ -3,6 +3,7 @@ package cat.itacademy.s04.t02.n02.fruit.controller.fruit;
 import cat.itacademy.s04.t02.n02.fruit.model.dto.fruit.FruitRequestDTO;
 import cat.itacademy.s04.t02.n02.fruit.model.dto.fruit.FruitResponseDTO;
 import cat.itacademy.s04.t02.n02.fruit.service.fruit.FruitService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class FruitController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public FruitResponseDTO saveFruit(@RequestBody FruitRequestDTO fruitRequestDTO) {
+    public FruitResponseDTO saveFruit(@Valid @RequestBody FruitRequestDTO fruitRequestDTO) {
         return fruitService.createFruit(fruitRequestDTO);
     }
 
